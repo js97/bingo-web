@@ -1,0 +1,20 @@
+{
+  "name": "bingo-web",
+  "version": "0.1.0",
+  "description": "Bingo Web Application",
+  "homepage": "https://github.com/js97/bingo-web#readme",
+  "bugs": {
+    "url": "https://github.com/js97/bingo-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js97/bingo-web.git"
+  },
+  "license": "ISC",
+  "author": "Jonas Schulz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
