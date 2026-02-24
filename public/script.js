@@ -36,6 +36,10 @@ function renderGrid(questions) {
     });
 
     grid.appendChild(tile);
+
+    requestAnimationFrame(() => {
+        fitTextToTile(tile);
+    });
   });
 }
 
@@ -71,6 +75,21 @@ async function loadRandomQuestions() {
   const res = await fetch("/api/questions");
   const data = await res.json();
   renderGrid(data);
+}
+
+function fitTextToTile(tile, maxFont = 24, minFont = 10) {
+  let size = maxFont;
+  tile.style.fontSize = size + "px";
+
+  // Reduce font size until content fits
+  while (
+    (tile.scrollHeight > tile.clientHeight ||
+     tile.scrollWidth > tile.clientWidth) &&
+    size > minFont
+  ) {
+    size--;
+    tile.style.fontSize = size + "px";
+  }
 }
 
 // Button click
