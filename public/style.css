@@ -2,6 +2,12 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   background: #f4f4f4;
+  color: #333;
+}
+
+.dark-mode {
+  background: #333;
+  color: white;
 }
 
 h1 {
@@ -30,6 +36,17 @@ h1 {
 }
 
 .tile.done {
+  background: #4caf50;
+  color: white;
+  text-decoration: line-through;
+}
+
+.tile.dark-mode {
+  background: #555;
+  border-color: #fff;
+  color: white;
+}
+.tile.dark-mode.done {
   background: #4caf50;
   color: white;
   text-decoration: line-through;

@@ -92,8 +92,16 @@ function fitTextToTile(tile, maxFont = 24, minFont = 10) {
   }
 }
 
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  document.querySelectorAll(".tile").forEach(tile => {
+    tile.classList.toggle("dark-mode");
+  });
+}
+
 // Button click
 generateBoardButton.addEventListener("click", loadRandomQuestions);
+document.getElementById("toggleDarkModeButton").addEventListener("click", toggleDarkMode);
 
 // Load once on page start
 loadRandomQuestions();
