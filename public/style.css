@@ -18,6 +18,19 @@ body {
   align-items: center;
 }
 
+.background-container.alt-background {
+  background-image: url("background/Bingo_2.png");
+  background-size: 900px 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 900px;
+  height: 900px;
+  margin: 30px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .dark-mode {
   background: #333;
   color: white;

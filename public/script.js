@@ -1,6 +1,8 @@
 const grid = document.getElementById("grid");
 const generateBoardButton = document.getElementById("generateBoardButton");
 const overlay = document.getElementById("bingoOverlay");
+const backgroundContainer = document.querySelector(".background-container");
+const changeBackgroundButton = document.getElementById("changeBackground");
 
 const SIZE = 4;
 let state = [];
@@ -79,6 +81,11 @@ async function loadRandomQuestions() {
   const data = await res.json();
   renderGrid(data);
 }
+
+function changeBackgroundImage() {
+  backgroundContainer.classList.toggle("alt-background");
+}
+changeBackgroundButton.addEventListener("click", changeBackgroundImage);
 
 function fitTextToTile(tile, maxFont = 24, minFont = 6) {
   let size = maxFont;
