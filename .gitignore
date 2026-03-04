@@ -8,4 +8,4 @@ build/
 *.log
 *.cache
 package-lock.json
-
+legacy/
