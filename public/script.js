@@ -19,7 +19,10 @@ function renderGrid(questions) {
   questions.forEach((text, index) => {
     const tile = document.createElement("div");
     tile.classList.add("tile");
-    tile.textContent = text;
+    const textSpan = document.createElement("span");
+    textSpan.classList.add("tile-text");
+    textSpan.textContent = text;
+    tile.appendChild(textSpan);
 
     const row = Math.floor(index / SIZE);
     const col = index % SIZE;
@@ -77,18 +80,20 @@ async function loadRandomQuestions() {
   renderGrid(data);
 }
 
-function fitTextToTile(tile, maxFont = 24, minFont = 10) {
+function fitTextToTile(tile, maxFont = 24, minFont = 6) {
   let size = maxFont;
-  tile.style.fontSize = size + "px";
+  const text = tile.querySelector(".tile-text");
+  text.style.fontSize = size + "px";
+  text.style.whiteSpace = "normal";
 
   // Reduce font size until content fits
   while (
-    (tile.scrollHeight > tile.clientHeight ||
-     tile.scrollWidth > tile.clientWidth) &&
+    (text.scrollHeight > tile.clientHeight ||
+     text.scrollWidth > tile.clientWidth) &&
     size > minFont
   ) {
     size--;
-    tile.style.fontSize = size + "px";
+    text.style.fontSize = size + "px";
   }
 }
 

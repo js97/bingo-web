@@ -5,6 +5,19 @@ body {
   color: #333;
 }
 
+.background-container {
+  background-image: url("background/Bingo_1.png");
+  background-size: 900px 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 900px;
+  height: 900px;
+  margin: 30px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .dark-mode {
   background: #333;
   color: white;
@@ -16,11 +29,11 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 160px);
-  grid-template-rows: repeat(4, 160px);
-  gap: 12px;
+  grid-template-columns: repeat(4, 134px);
+  grid-template-rows: repeat(4, 134px);
+  gap: 8px;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: -154px;
 }
 
 .tile {
@@ -33,6 +46,18 @@ h1 {
   cursor: pointer;
   user-select: none;
   transition: 0.2s;
+  box-sizing: border-box;
+  padding: 4px;
+  overflow: hidden;
+}
+
+.tile-text {
+  text-align: center;
+  word-break: break-word;
+  width: 100%;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .tile.done {
