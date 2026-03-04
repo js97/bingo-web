@@ -41,6 +41,7 @@ h1 {
 }
 
 .grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 134px);
   grid-template-rows: repeat(4, 134px);
@@ -93,7 +94,7 @@ h1 {
 
 /* Bingo Style */
 .bingo-overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
