@@ -75,18 +75,18 @@ h1 {
 }
 
 .tile.done {
-  background: #4caf50;
+  background: #168b1a69;
   color: white;
   text-decoration: line-through;
 }
 
 .tile.dark-mode {
-  background: #555;
+  background: #20202046;
   border-color: #fff;
   color: white;
 }
 .tile.dark-mode.done {
-  background: #4caf50;
+  background: #042a0570;
   color: white;
   text-decoration: line-through;
 }
