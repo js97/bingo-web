@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 
-const { questions } = require("./data/assetLoader.js");
+const { questions, questionDicts } = require("./data/assetLoader.js");
 
 const app = express();
 const PORT = 3000;
@@ -15,7 +15,7 @@ function getRandomQuestions(arr, count) {
 }
 
 app.get("/api/questions", (req, res) => {
-  const randomSet = getRandomQuestions(questions, 16);
+  const randomSet = getRandomQuestions(questionDicts, 16);
   res.json(randomSet);
 });
 

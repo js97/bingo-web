@@ -14,17 +14,24 @@ function initState() {
 }
 
 // Create grid from question array
-function renderGrid(questions) {
+function renderGrid(questionDicts) {
   grid.innerHTML = ""; // clear old tiles
   initState();
 
-  questions.forEach((text, index) => {
+  questionDicts.forEach((qdict, index) => {
+    text = qdict["question"];
+    explanation = qdict["explanation"];
+
     const tile = document.createElement("div");
     tile.classList.add("tile");
     const textSpan = document.createElement("span");
     textSpan.classList.add("tile-text");
     textSpan.textContent = text;
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("tooltip");
+    tooltip.textContent = explanation;
     tile.appendChild(textSpan);
+    tile.appendChild(tooltip);
 
     const row = Math.floor(index / SIZE);
     const col = index % SIZE;

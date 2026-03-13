@@ -91,6 +91,26 @@ h1 {
   text-decoration: line-through;
 }
 
+.tooltip {
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  width: 160px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.tile:hover .tooltip {
+  opacity: 1;
+}
 
 /* Bingo Style */
 .bingo-overlay {
