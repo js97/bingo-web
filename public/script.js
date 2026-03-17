@@ -4,6 +4,13 @@ const overlay = document.getElementById("bingoOverlay");
 const backgroundContainer = document.querySelector(".background-container");
 const changeBackgroundButton = document.getElementById("changeBackground");
 
+const backgrounds = [
+  "background/Bingo_1.png",
+  "background/Bingo_2.png",
+  "background/Bingo_5.jpg",
+];
+let currentBackgroundIndex = 0;
+
 const SIZE = 4;
 let state = [];
 
@@ -90,7 +97,9 @@ async function loadRandomQuestions() {
 }
 
 function changeBackgroundImage() {
-  backgroundContainer.classList.toggle("alt-background");
+  // backgroundContainer.classList.toggle("alt-background");
+  currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+  backgroundContainer.style.backgroundImage = `url(${backgrounds[currentBackgroundIndex]})`;
 }
 changeBackgroundButton.addEventListener("click", changeBackgroundImage);
 
